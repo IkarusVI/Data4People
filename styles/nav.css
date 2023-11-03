@@ -1,0 +1,26 @@
+@font-face {
+    font-family: Geist_Light;
+    src: url(../fonts/GeistMono/GeistMono-UltraLight.otf);
+}
+
+#navbar{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    min-height: 4vh;
+    
+    font-family: Geist_Light;
+    color: white;
+   
+    padding-left: 45px;
+
+    background-color: #18181A;
+}
+#navbar img{
+    max-width: 200px;
+    object-fit: cover;
+}
+#navbar p{
+    margin-top: 4.5px;
+}

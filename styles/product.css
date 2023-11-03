@@ -1,0 +1,533 @@
+@font-face {
+    font-family: Geist_Regular;
+    src: url(../fonts/GeistMono/GeistMono-Regular.otf);
+}
+@font-face {
+    font-family: Geist_Bold;
+    src: url(../fonts/GeistMono/GeistMono-Bold.otf);
+}
+@font-face {
+    font-family: Geist_Black;
+    src: url(../fonts/GeistMono/GeistMono-Black.otf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Geist_Black; 
+    text-decoration: none;
+    color: inherit;
+    scroll-behavior: smooth;
+    border: none;
+    outline: none;
+}
+textarea {
+    resize: none;
+}
+
+/*Estilizado de la sección 1*/
+
+#section1{
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    min-height: 88vh;
+
+    padding: 50px;
+    background: linear-gradient(to bottom,#18181A,#0c4dc6);
+}
+
+
+/*Estilizado de la imagen de la sección 1*/
+
+#section1 img{
+    min-width: 400px;
+    max-width: 650px;
+    width: 30%;
+    height: 730px;
+
+    border-radius: 10px;
+    
+    transform: scaleX(-1);
+    object-fit: cover;
+    object-position: 70%;
+    
+}
+
+
+/*Estilizado del contenedor del texto grande y los módulos del master */
+
+#section1 #text_container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column;
+    gap: 5px;
+
+    height: 730px;
+    
+}
+
+
+/*Estilizado del texto grande*/
+
+#section1 #text_container #text_container1{
+    width: 400px;
+    height: 70%;
+    min-height: fit-content;
+
+    font-size: 3.2em;
+    color: rgba(255, 255, 255, 0.838);
+
+    border-radius: 5px;
+    padding: 5px;
+
+}
+
+
+/*Estilizado de los modulos*/
+
+#section1 #text_container #text_container2{
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-flow: column;
+    gap: 30px;
+
+    width: 400px;
+    height: 30%;
+    
+    
+    padding: 20px 20px 20px 20px;
+    border-radius: 5px;
+    
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+    background-color: #18181A;
+    
+
+    overflow: hidden;
+    position: relative;
+}
+
+/*
+    Efecto hover de los módulos
+*/
+
+#section1 #text_container #text_container2 p:hover{
+    background-color: rgba(255, 255, 255, 0.381);
+    transition: all 0.3s;
+    
+}
+
+/*
+    Le damos posición relativa a los módulos 
+    para que sobresalgan sobre el banner giratorio 
+    del efecto before
+*/
+
+#section1 #text_container #text_container2 p{
+    position: relative;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+/*
+    Efecto borde luminoso "Cyberpunk"
+*/
+
+#section1 #text_container #text_container2::before{
+    content: "";
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+
+    width: 200%;
+    height: 100px;
+
+    background:linear-gradient(to right,rgb(0, 255, 85),rgb(221, 0, 255));
+    animation: rotate 3s linear infinite;
+}
+
+#section1 #text_container #text_container2::after{
+    content: "";
+    position: absolute;
+    inset: 3px;
+    background-color: #18181A;    
+}
+
+/*
+    Keyframe que permite rotar al banner del before
+*/
+
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg)
+    }
+
+}
+
+/*
+    Estilado de la caja padre de los ratios o beneficios
+*/
+
+#section1 #father_box{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-flow: column;
+    gap: 20px;
+    
+    width: 400px;
+    height: 730px;
+
+    color: white;
+}
+
+/*
+    Estilado de cada caja de ratio o beneficio
+*/
+
+#section1 #father_box .evidence{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+
+/*
+    Estilado predefinido para la clase BOX (los cuadrados con números)
+*/
+
+#section1 #father_box .evidence .box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100px;
+    height: 100px;
+    min-width: fit-content;
+
+    padding: 20px;
+    border-radius: 15px;
+
+    border-top: 2px solid rgb(31, 101, 206);
+    border-right: 2px solid rgb(31, 101, 206);
+
+    text-shadow: 1px 1px 5px rgb(33, 214, 227);
+    color: white;
+    font-size: 1.5em;
+
+    background-color: #18181a9e;
+}
+
+/*
+    Estilado de la caja para el boton de scrolldown
+*/
+
+
+#botton_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 8vh;
+    min-height: 70px;
+
+    background: linear-gradient(to bottom,#0c4dc6,#18181A);
+}
+
+/*
+    Estilado del boton scrolldown
+*/
+
+#botton_container #botton_next{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 50px;
+    height: 50px;
+
+    border: 1px solid #ffffff9f;
+    border-radius: 100%;
+    
+    color: #00F3BD;
+}
+
+/*
+    Estilado de la sección 2 de formulario
+*/
+
+#section2{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    gap: 100px;
+
+    min-height: 100vh;
+
+    padding-top: 100px;
+    padding-bottom: 50px;
+    
+    background-color: #18181A;
+    
+}
+
+/*
+    Estilado del título de la sección
+*/
+
+#section2 #section2_tittle{
+    color: white;
+    font-size: 2.5em;
+}
+
+/*
+    Estilado del contenedor padre del formulario
+*/
+
+#form_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    min-height: fit-content;
+}
+
+/*
+    Estilado la caja izquierda del formulario (imagen de la profesional)
+*/
+
+#section2 #form_container #img_container{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-flow: column;
+
+    width: 250px;
+    height: 400px;
+
+    padding: 20px;
+    border-radius: 5px 0 0 5px;
+
+    background-color: rgb(255, 255, 255);
+    
+}
+
+/*
+    Estilado de la imagen de la caja izquierda
+*/
+
+#section2 #form_container #img_container img{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+
+    border-radius:200%;
+}
+
+/*
+    Estilado del texto de la caja izquierda
+*/
+
+#section2 #form_container #img_container p{
+    margin-top: 10px;
+
+    font-size: 1em;
+    text-align: center;
+    color: rgb(24, 24, 26);
+}
+
+/*
+    Estilado de la caja derecha del formulario (los campos)
+*/
+
+#section2 #form_container #form{
+    border: 1px solid rgb(16, 191, 255);
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+}
+
+/*
+    Estilado del formulario de la caja derecha
+*/
+
+#section2 #form_container #form #form_content{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-flow: column;
+    gap: 5px;
+
+    width: 450px;
+    height: 400px;
+
+    padding: 20px;
+}
+
+/*
+    Estilado de los inputs del formulario 
+*/
+
+#section2 #form_container #form #form_content textarea,
+#section2 #form_container #form #form_content input{
+    
+    width: 100%;
+
+    padding: 10px;
+
+    background-color: transparent;
+    border-bottom:1px solid rgb(16, 191, 255) ;
+    color: white;
+}
+
+#section2 #form_container #form #form_content textarea:focus,
+#section2 #form_container #form #form_content input:focus{
+    border-bottom: 2px solid rgb(16, 191, 255);
+    box-shadow: 5px 5px 10px #217ea2;
+    transition: all 0.2s;
+}
+
+/*
+    Estilado del botón send
+*/
+
+#section2 #form_container #form #form_content input:last-child{
+    position: relative;
+    transform: translateX(-200px);
+
+    width: initial;
+
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+
+    color: rgb(255, 255, 255);
+    background-color: #18181A;    
+}
+
+#section2 #form_container #form #form_content input:last-child:hover{
+    transition: all 0.5s;
+    background-color: #217ea2;
+}
+
+
+/*
+    Adaptación Responsive
+*/
+
+@media screen and (max-width: 1360px) {
+    #section1{
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    #section1 img{
+        flex-grow: 1;
+        max-width: inherit;
+    }
+
+    #section1 #text_container #text_container1{
+        flex-grow: 1;
+        max-width: inherit;
+    }
+    #section1 #text_container #text_container2{
+        flex-grow: 1;
+        max-width: inherit;   
+    }
+    #section1 #father_box{
+        height: 400px;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    
+    
+    #section2 #form_container #img_container{
+        width: 350px;
+        height: 300px;
+        padding: 20px;
+        border-radius: 5px 5px 0 0;
+    } 
+    #section2 #form_container #form{
+        border-left: 1px solid rgb(16, 191, 255);
+        border-radius: 0 0 5px 5px;
+    }
+    
+    #section2 #form_container #form #form_content{
+        width: 350px;
+        height: 400px;
+    }
+    
+    #section2 #form_container #form #form_content input:last-child{
+        transform: translateX(0);
+        color: rgb(255, 255, 255);
+        align-self: center;
+        border: 1px solid rgb(16, 191, 255);
+    }
+
+}
+
+@media screen and (max-width: 929px) {
+    #section1{
+        align-items: center;
+        justify-content: flex-start;
+    }
+    
+    #section1 img{
+        width: 450px;
+        border-radius: 10px;
+    }
+    
+    #section1 #text_container{
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-flow: row;
+        gap: 25px;
+        flex-wrap: wrap;
+
+        height: fit-content;
+    }
+
+}
+
+
+@media screen and (max-width: 500px) {    
+    #section1{
+        padding-top: 50px;
+    }
+    
+    #section1 img{
+        min-width: 200px;
+        height: 350px;
+        flex-grow: 1;
+    }
+    
+    #section1 #text_container {
+        min-width: 200px;
+        flex-grow: 1;
+        font-size: 1em;
+    }
+    #section1 #text_container #text_container1{
+        font-size: 1.3em;
+    }
+    #section1 #text_container #text_container2{
+        font-size: 1em;
+    }
+   
+
+}
